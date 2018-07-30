@@ -77,14 +77,14 @@ public class CombineImages {
                 max.put(basename, high);
             }
             
-            cmds.add(cmd+" "+file+" ./"+outputDir+"/"+dir+"/"+rename);
+            cmds.add(cmd+" \""+file+"\" \"./"+outputDir+"/"+dir+"/"+rename+"\"");
             addMapping(file, basename+".pattern");
         }
         
         NumberFormat nf = new DecimalFormat("00000");
         for(String basename : min.keySet()) {
             String pattern = basename+"_C<Cep192,EB3>_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
-            cmds.add("echo \""+pattern+"\" > ./"+outputDir+"/"+dir+"/"+basename+".pattern");
+            cmds.add("echo \""+pattern+"\" > \"./"+outputDir+"/"+dir+"/"+basename+".pattern\"");
         }
         
         return cmds;
@@ -102,7 +102,7 @@ public class CombineImages {
             if (!file.startsWith("./"+dir+"/") || !file.endsWith(".lif"))
                 continue;
             
-            cmds.add(cmd+" "+file+" ./"+outputDir+"/"+dir+"/"+file);
+            cmds.add(cmd+" \""+file+"\" \"./"+outputDir+"/"+dir+"/"+file+"\"");
         }
         
         return cmds;
@@ -120,7 +120,7 @@ public class CombineImages {
             if (!file.startsWith("./"+dir+"/") || !file.endsWith(".tif"))
                 continue;
             
-            cmds.add(cmd+" "+file+" ./"+outputDir+"/"+dir+"/"+file);
+            cmds.add(cmd+" \""+file+"\" \"./"+outputDir+"/"+dir+"/"+file+"\"");
         }
         
         return cmds;
@@ -170,14 +170,14 @@ public class CombineImages {
                 max.put(basename, high);
             }
             
-            cmds.add(cmd+" "+file+" ./"+outputDir+"/"+dir+"/"+rename);
+            cmds.add(cmd+" \""+file+"\" \"./"+outputDir+"/"+dir+"/"+rename+"\"");
             addMapping(file, basename+".pattern");
         }
         
         NumberFormat nf = new DecimalFormat("00000");
         for(String basename : min.keySet()) {
             String pattern = basename+"_C<Major satellites TALE,Minor satellites TALE,mCherry>_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
-            cmds.add("echo \""+pattern+"\" > ./"+outputDir+"/"+dir+"/"+basename+".pattern");
+            cmds.add("echo \""+pattern+"\" > \"./"+outputDir+"/"+dir+"/"+basename+".pattern\"");
         }
         
         return cmds;
@@ -225,14 +225,14 @@ public class CombineImages {
                 max.put(basename, high);
             }
             
-            cmds.add(cmd+" "+file+" ./"+outputDir+"/"+dir+"/"+rename);
+            cmds.add(cmd+" \""+file+"\" \"./"+outputDir+"/"+dir+"/"+rename+"\"");
             addMapping(file, basename+".pattern");
         }
         
         NumberFormat nf = new DecimalFormat("00000");
         for(String basename : min.keySet()) {
             String pattern = basename+"_C<alpha-tubulin,H2B>_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
-            cmds.add("echo \""+pattern+"\" > ./"+outputDir+"/"+dir+"/"+basename+".pattern");
+            cmds.add("echo \""+pattern+"\" > \"./"+outputDir+"/"+dir+"/"+basename+".pattern\"");
         }
         
         return cmds;
@@ -268,13 +268,13 @@ public class CombineImages {
             
             String rename = basename+"_C"+channel+".tif";
             
-            cmds.add(cmd+" "+file+" ./"+outputDir+"/"+dir+"/"+rename);
+            cmds.add(cmd+" \""+file+"\" \"./"+outputDir+"/"+dir+"/"+rename+"\"");
             addMapping(file, basename+".pattern");
         }
         
         for(String basename : names) {
             String pattern = basename+"_C<Major satellites TALE,Minor satellites TALE>.tif";
-            cmds.add("echo \""+pattern+"\" > ./"+outputDir+"/"+dir+"/"+basename+".pattern");
+            cmds.add("echo \""+pattern+"\" > \"./"+outputDir+"/"+dir+"/"+basename+".pattern\"");
         }
         
         return cmds;
@@ -324,14 +324,14 @@ public class CombineImages {
                 max.put(basename, high);
             }
             
-            cmds.add(cmd+" "+file+" ./"+outputDir+"/"+dir+"/"+rename);
+            cmds.add(cmd+" \""+file+"\" \"./"+outputDir+"/"+dir+"/"+rename+"\"");
             addMapping(file, basename+".pattern");
         }
         
         NumberFormat nf = new DecimalFormat("00000");
         for(String basename : min.keySet()) {
             String pattern = basename+"_C<Major satellites TALE,Minor satellites TALE,H2B>_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
-            cmds.add("echo \""+pattern+"\" > ./"+outputDir+"/"+dir+"/"+basename+".pattern");
+            cmds.add("echo \""+pattern+"\" > \"./"+outputDir+"/"+dir+"/"+basename+".pattern\"");
         }
         
         return cmds;
@@ -375,14 +375,14 @@ public class CombineImages {
             
             String rename = basename+"_T"+t+".tif";
             
-            cmds.add(cmd+" "+file+" ./"+outputDir+"/"+dir+"/"+rename);
+            cmds.add(cmd+" \""+file+"\" \"./"+outputDir+"/"+dir+"/"+rename+"\"");
             addMapping(file, basename+".pattern");
         }
         
         NumberFormat nf = new DecimalFormat("00000");
         for(String basename : names) {
             String pattern = basename+"_T<0-7>.tif";
-            cmds.add("echo \""+pattern+"\" > ./"+outputDir+"/"+dir+"/"+basename+".pattern");
+            cmds.add("echo \""+pattern+"\" > \"./"+outputDir+"/"+dir+"/"+basename+".pattern\"");
         }
         
         return cmds;
@@ -446,13 +446,13 @@ public class CombineImages {
             
             // no renaming required, just copy the files to the
             // import directory
-            cmds.add(cmd+" "+file+" ./"+outputDir+"/"+dir+"/"+file);
+            cmds.add(cmd+" \""+file+"\" \"./"+outputDir+"/"+dir+"/"+file+"\"");
         }
         
         NumberFormat nf = new DecimalFormat("000");
         for(String basename : names) {
             String pattern = basename+".*_T<"+nf.format(minT.get(basename))+"-"+nf.format(maxT.get(basename))+">_Z<"+nf.format(minZ.get(basename))+"-"+nf.format(maxZ.get(basename))+">.*.tif";
-            cmds.add("echo \""+pattern+"\" > ./"+outputDir+"/"+dir+"/"+basename+".pattern");
+            cmds.add("echo \""+pattern+"\" > \"./"+outputDir+"/"+dir+"/"+basename+".pattern\"");
         }
         
         return cmds;
@@ -507,7 +507,7 @@ public class CombineImages {
             
             String rename = basename+"_C"+channel+".tif";
             
-            cmds.add(cmd+" "+file+" ./"+outputDir+"/"+dir+"/"+rename);
+            cmds.add(cmd+" \""+file+"\" \"./"+outputDir+"/"+dir+"/"+rename+"\"");
             addMapping(file, basename+".pattern");
         }
         
@@ -520,7 +520,7 @@ public class CombineImages {
                     channelPattern += ",";
             }
             String pattern = basename+"_C<"+channelPattern+">.tif";
-            cmds.add("echo \""+pattern+"\" > ./"+outputDir+"/"+dir+"/"+basename+".pattern");
+            cmds.add("echo \""+pattern+"\" > \"./"+outputDir+"/"+dir+"/"+basename+".pattern\"");
         }
         
         return cmds;
@@ -557,13 +557,13 @@ public class CombineImages {
 
             String rename = basename+"_C"+channel+"_T0.tif";
             
-            cmds.add(cmd+" "+file+" ./"+outputDir+"/"+dir+"/"+rename);
+            cmds.add(cmd+" \""+file+"\" \"./"+outputDir+"/"+dir+"/"+rename+"\"");
             addMapping(file, basename+".pattern");
         }
         
         for(String basename : names) {
             String pattern = basename+"_C<DNA,EdU>_T<0>.tif";
-            cmds.add("echo \""+pattern+"\" > ./"+outputDir+"/"+dir+"/"+basename+".pattern");
+            cmds.add("echo \""+pattern+"\" > \"./"+outputDir+"/"+dir+"/"+basename+".pattern\"");
         }
         
         return cmds;
@@ -614,14 +614,14 @@ public class CombineImages {
                 max.put(basename, high);
             }
             
-            cmds.add(cmd+" "+file+" ./"+outputDir+"/"+dir+"/"+rename);
+            cmds.add(cmd+" \""+file+"\" \"./"+outputDir+"/"+dir+"/"+rename+"\"");
             addMapping(file, basename+".pattern");
         }
         
         NumberFormat nf = new DecimalFormat("00000");
         for(String basename : min.keySet()) {
             String pattern = basename+"_C<Major satellites TALE,Minor satellites TALE,EB3>_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
-            cmds.add("echo \""+pattern+"\" > ./"+outputDir+"/"+dir+"/"+basename+".pattern");
+            cmds.add("echo \""+pattern+"\" > \"./"+outputDir+"/"+dir+"/"+basename+".pattern\"");
         }
         
         return cmds;
@@ -664,14 +664,14 @@ public class CombineImages {
                 max.put(basename, high);
             }
             
-            cmds.add(cmd+" "+file+" ./"+outputDir+"/"+dir+"/"+rename);
+            cmds.add(cmd+" \""+file+"\" \"./"+outputDir+"/"+dir+"/"+rename+"\"");
             addMapping(file, basename+".pattern");
         }
         
         NumberFormat nf = new DecimalFormat("00");
         for(String basename : min.keySet()) {
             String pattern = basename+"_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
-            cmds.add("echo \""+pattern+"\" > ./"+outputDir+"/"+dir+"/"+basename+".pattern");
+            cmds.add("echo \""+pattern+"\" > \"./"+outputDir+"/"+dir+"/"+basename+".pattern\"");
         }
         
         return cmds;
@@ -714,14 +714,14 @@ public class CombineImages {
                 max.put(basename, high);
             }
             
-            cmds.add(cmd+" "+file+" ./"+outputDir+"/"+dir+"/"+rename);
+            cmds.add(cmd+" \""+file+"\" \"./"+outputDir+"/"+dir+"/"+rename+"\"");
             addMapping(file, basename+".pattern");
         }
         
         NumberFormat nf = new DecimalFormat("00");
         for(String basename : min.keySet()) {
             String pattern = basename+"_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
-            cmds.add("echo \""+pattern+"\" > ./"+outputDir+"/"+dir+"/"+basename+".pattern");
+            cmds.add("echo \""+pattern+"\" > \"./"+outputDir+"/"+dir+"/"+basename+".pattern\"");
         }
         
         return cmds;
@@ -764,14 +764,14 @@ public class CombineImages {
                 max.put(basename, high);
             }
             
-            cmds.add(cmd+" "+file+" ./"+outputDir+"/"+dir+"/"+rename);
+            cmds.add(cmd+" \""+file+"\" \"./"+outputDir+"/"+dir+"/"+rename+"\"");
             addMapping(file, basename+".pattern");
         }
         
         NumberFormat nf = new DecimalFormat("00");
         for(String basename : min.keySet()) {
             String pattern = basename+"_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
-            cmds.add("echo \""+pattern+"\" > ./"+outputDir+"/"+dir+"/"+basename+".pattern");
+            cmds.add("echo \""+pattern+"\" > \"./"+outputDir+"/"+dir+"/"+basename+".pattern\"");
         }
         
         return cmds;
