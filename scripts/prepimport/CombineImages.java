@@ -22,7 +22,7 @@ public class CombineImages {
     static Map<String, String> mapping = new HashMap<String, String>();
     
     static final String outputDir = "../20180731-renamed";
-    static final String cmd = "cp";
+    static final String cmd = "ln -s";
     
     public CombineImages() {
     }
@@ -819,11 +819,13 @@ public class CombineImages {
         
         
         StringBuilder sb = new StringBuilder();
-        sb.append("#!/bin/bash\n\n");
+        sb.append("#!/bin/bash\n");
+        sb.append("#\n# Create the *.pattern files and symbolic links with\n"
+                + "# the _C, _Z, _T prefixes linking to the original files\n\n");
         for (String s : cmds) {
                  sb.append(s+"\n");
         }
-        CSVTools.writeFile("/Users/dlindner/Repositories/idr0045-reichmann/scripts/import/renameCommands.sh", sb.toString());
+        CSVTools.writeFile("/Users/dlindner/Repositories/idr0045-reichmann/scripts/import/createPatternFiles.sh", sb.toString());
         
         sb = new StringBuilder();
         sb.append(BasicCSVUtils.join(new String[]{"Dataset Name", "Image File", "Image Name"})+"\n");
