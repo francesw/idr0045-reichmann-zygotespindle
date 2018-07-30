@@ -36,7 +36,7 @@ public class IDR0045Workflow {
         // ====================
         // Parameters
         
-        final String path = "/uod/idr/filesets/idr0045-reichmann/20180709-ftp/import";
+        final String path = "/uod/idr/filesets/idr0045-reichmann/20180731-renamed";
         
         final String assayFile = "/Users/dlindner/Repositories/idr0045-reichmann/experimentA/idr0045-experimentA-assays.txt";
         
