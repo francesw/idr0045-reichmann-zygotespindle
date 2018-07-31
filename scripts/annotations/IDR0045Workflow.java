@@ -36,16 +36,16 @@ public class IDR0045Workflow {
         // ====================
         // Parameters
         
-        final String path = "/uod/idr/filesets/idr0045-reichmann/20180709-ftp";
+        final String path = "/uod/idr/filesets/idr0045-reichmann/20180731-renamed";
         
-        final String assayFile = "/Users/dlindner/Repositories/idr0045-reichmann-zygotespindle/experimentA/idr0045-experimentA-assays.txt";
+        final String assayFile = "/Users/dlindner/Repositories/idr0045-reichmann/experimentA/idr0045-experimentA-assays.txt";
         
         final String filePathColumn = "Comment [Image File Path]";
         final String datasetNameColumn = "Assay Name";
         
-        final String filePathsFile = "/Users/dlindner/Repositories/idr0045-reichmann-zygotespindle/experimentA/idr0045-experimentA-filePaths.tsv";
-        final String annotationFile = "/Users/dlindner/Repositories/idr0045-reichmann-zygotespindle/experimentA/idr0045-experimentA-annotation.csv";
-        final String fileMappingFile = "/Users/dlindner/Repositories/idr0045-reichmann-zygotespindle/experimentA/filenameImageMapping.csv";
+        final String filePathsFile = "/Users/dlindner/Repositories/idr0045-reichmann/experimentA/idr0045-experimentA-filePaths.tsv";
+        final String annotationFile = "/Users/dlindner/Repositories/idr0045-reichmann/experimentA/idr0045-experimentA-annotation.csv";
+        final String fileMappingFile = "/Users/dlindner/Repositories/idr0045-reichmann/experimentA/filenameImageMapping.csv";
         
         // =====================
         
