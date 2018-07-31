@@ -109,7 +109,7 @@ public class CombineImages {
             cmds.add(cmd+" \"../../"+baseDir+"/"+dir+"/"+imgName+"\" \""+imgName+"\"");
         }
         
-        cmds.add("cd ..");
+        cmds.add("cd ../..");
         return cmds;
     }
     

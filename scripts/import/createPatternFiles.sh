@@ -4086,7 +4086,7 @@ ln -s "../../20180709-ftp/Figure01C/MicrotubuleBallStage4.lif" "MicrotubuleBallS
 ln -s "../../20180709-ftp/Figure01C/Prometaphase1.lif" "Prometaphase1.lif"
 ln -s "../../20180709-ftp/Figure01C/Prometaphase3.lif" "Prometaphase3.lif"
 ln -s "../../20180709-ftp/Figure01C/Prometaphase4.lif" "Prometaphase4.lif"
-cd ..
+cd ../..
 mkdir -p 20180731-renamed/Figure01D
 cd 20180731-renamed/Figure01D
 ln -s "../../20180709-ftp/Figure01D/PM10.tif" "PM10.tif"
