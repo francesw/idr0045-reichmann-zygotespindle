@@ -20,10 +20,14 @@ public class CombineImages {
 
     // original image name to renamed image name
     static Map<String, String> mapping = new HashMap<String, String>();
+    static String filePaths = "";
     
     static final String baseDir = "20180709-ftp";
     static final String outputDir = "20180731-renamed";
     static final String cmd = "ln -s";
+    
+    static final String filePathsBase = "/uod/idr/filesets/idr0045-reichmann/20180731-renamed";
+    static final String filePathsFile = "/Users/dlindner/Repositories/idr0045-reichmann/experimentA/idr0045-experimentA-filePaths.tsv";
     
     public CombineImages() {
     }
@@ -34,6 +38,10 @@ public class CombineImages {
             System.err.println("Warning: Duplicate original image file name "+s1);
         }
         mapping.put(s1, to);
+    }
+    
+    static void addFilePath(String dir, String img) {
+        filePaths += "Dataset:name:"+dir+"\t"+filePathsBase+"/"+dir+"/"+img+"\n";
     }
     
     public static List<String> Figure01A(List<String> files) {
@@ -87,6 +95,7 @@ public class CombineImages {
         for(String basename : min.keySet()) {
             String pattern = basename+"_C<Cep192,EB3>_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -107,6 +116,7 @@ public class CombineImages {
                 continue;
             String imgName = file.substring(file.lastIndexOf('/')+1);
             cmds.add(cmd+" \"../../"+baseDir+"/"+dir+"/"+imgName+"\" \""+imgName+"\"");
+            addFilePath(dir, imgName);
         }
         
         cmds.add("cd ../..");
@@ -127,6 +137,7 @@ public class CombineImages {
                 continue;
             String imgName = file.substring(file.lastIndexOf('/')+1);
             cmds.add(cmd+" \"../../"+baseDir+"/"+dir+"/"+imgName+"\" \""+imgName+"\"");
+            addFilePath(dir, imgName);
         }
         
         cmds.add("cd ../..");
@@ -186,6 +197,7 @@ public class CombineImages {
         for(String basename : min.keySet()) {
             String pattern = basename+"_C<Major satellites TALE,Minor satellites TALE,mCherry>_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -243,6 +255,7 @@ public class CombineImages {
         for(String basename : min.keySet()) {
             String pattern = basename+"_C<alpha-tubulin,H2B>_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -287,6 +300,7 @@ public class CombineImages {
         for(String basename : names) {
             String pattern = basename+"_C<Major satellites TALE,Minor satellites TALE>.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -346,6 +360,7 @@ public class CombineImages {
         for(String basename : min.keySet()) {
             String pattern = basename+"_C<Major satellites TALE,Minor satellites TALE,H2B>_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -399,6 +414,7 @@ public class CombineImages {
         for(String basename : names) {
             String pattern = basename+"_T<0-7>.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -471,6 +487,7 @@ public class CombineImages {
         for(String basename : names) {
             String pattern = basename+".*_T<"+nf.format(minT.get(basename))+"-"+nf.format(maxT.get(basename))+">_Z<"+nf.format(minZ.get(basename))+"-"+nf.format(maxZ.get(basename))+">.*.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -541,6 +558,7 @@ public class CombineImages {
             }
             String pattern = basename+"_C<"+channelPattern+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -586,6 +604,7 @@ public class CombineImages {
         for(String basename : names) {
             String pattern = basename+"_C<DNA,EdU>_T<0>.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -646,6 +665,7 @@ public class CombineImages {
         for(String basename : min.keySet()) {
             String pattern = basename+"_C<Major satellites TALE,Minor satellites TALE,EB3>_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -698,6 +718,7 @@ public class CombineImages {
         for(String basename : min.keySet()) {
             String pattern = basename+"_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -750,6 +771,7 @@ public class CombineImages {
         for(String basename : min.keySet()) {
             String pattern = basename+"_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -802,6 +824,7 @@ public class CombineImages {
         for(String basename : min.keySet()) {
             String pattern = basename+"_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -869,6 +892,8 @@ public class CombineImages {
             sb.append(BasicCSVUtils.join(parts)+"\n");
         }
         CSVTools.writeFile("/Users/dlindner/Repositories/idr0045-reichmann/experimentA/filenameImageMapping.csv", sb.toString());
+        
+        CSVTools.writeFile(filePathsFile, filePaths);
     }
 
 }
