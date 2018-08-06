@@ -26,7 +26,7 @@ public class CombineImages {
     static final String outputDir = "20180606-renamed";
     static final String cmd = "ln -s";
     
-    static final String filePathsBase = "/uod/idr/filesets/idr0045-reichmann/20180731-renamed";
+    static final String filePathsBase = "/uod/idr/filesets/idr0045-reichmann/20180606-renamed";
     static final String filePathsFile = "/Users/dlindner/Repositories/idr0045-reichmann/experimentA/idr0045-experimentA-filePaths.tsv";
     
     public CombineImages() {
