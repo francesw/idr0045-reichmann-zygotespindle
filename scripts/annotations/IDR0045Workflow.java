@@ -57,29 +57,8 @@ public class IDR0045Workflow {
         /**
          *  create filePath.tsv
          */
-        
-        // Extract the column with the dataset name and image file paths
-        int indexFilePath = getColumnIndex(input, filePathColumn, TSV);
-        int indexDataset = getColumnIndex(input, datasetNameColumn, TSV);
-        String filePathsContent = extractColumns(input, new int[]{indexDataset, indexFilePath}, TSV);
-        
-        // have to remove "Reichman-2018/"
-        filePathsContent = process(filePathsContent, 1, TSV, content -> {
-            return content.substring(content.indexOf('/')+1);
-        });
-        
-        // Prefix the dataset name with the /uod/idr/filesets/... path to get the absolute path
-        filePathsContent = prefixColumn(filePathsContent, 0, TSV, "Dataset:name:", null);
-        
-        // Prefix the (relative) image file paths with the /uod/idr/filesets/... path to get the absolute path
-        filePathsContent = prefixColumn(filePathsContent, 1, TSV, path+"/", null);
-        
-        // remove the header line
-        filePathsContent = removeRow(filePathsContent, 0);
-        
-        // save the filePaths.tsv file
-        writeFile(filePathsFile, filePathsContent);
-        
+
+         // filePath.tsv is created by CombineImages.java
         
         /**
          * create annotation.csv

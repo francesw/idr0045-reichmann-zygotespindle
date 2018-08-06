@@ -20,10 +20,14 @@ public class CombineImages {
 
     // original image name to renamed image name
     static Map<String, String> mapping = new HashMap<String, String>();
+    static String filePaths = "";
     
     static final String baseDir = "20180709-ftp";
-    static final String outputDir = "20180731-renamed";
+    static final String outputDir = "20180606-renamed";
     static final String cmd = "ln -s";
+    
+    static final String filePathsBase = "/uod/idr/filesets/idr0045-reichmann/20180606-renamed";
+    static final String filePathsFile = "/Users/dlindner/Repositories/idr0045-reichmann/experimentA/idr0045-experimentA-filePaths.tsv";
     
     public CombineImages() {
     }
@@ -36,6 +40,10 @@ public class CombineImages {
         mapping.put(s1, to);
     }
     
+    static void addFilePath(String dir, String img) {
+        filePaths += "Dataset:name:"+dir+"\t"+filePathsBase+"/"+dir+"/"+img+"\n";
+    }
+    
     public static List<String> Figure01A(List<String> files) {
         // Embryo10.EGFP.Cam_Right_00041.tif
         // Embryo10_C0_T00041.tif
@@ -46,8 +54,8 @@ public class CombineImages {
         cmds.add("mkdir -p "+outputDir+"/"+dir);
         cmds.add("cd "+outputDir+"/"+dir);
         
-        HashMap<String, Integer> min = new HashMap<String, Integer>();
-        HashMap<String, Integer> max = new HashMap<String, Integer>();
+        HashMap<String, HashMap<String, Integer>> min = new HashMap<String, HashMap<String, Integer>>();
+        HashMap<String, HashMap<String, Integer>> max = new HashMap<String, HashMap<String, Integer>>();
         
         for (String file : files) {
             if (!file.startsWith("./"+dir+"/") || !file.endsWith(".tif"))
@@ -67,16 +75,21 @@ public class CombineImages {
             
             String rename = basename+"_C"+channel+"_T"+name[4]+".tif";
             
+            if (!min.containsKey(basename))
+                min.put(basename, new HashMap<String, Integer>());
+            if (!max.containsKey(basename))
+                max.put(basename, new HashMap<String, Integer>());
+            
             int x = Integer.parseInt(name[4]);
-            int low = min.containsKey(basename) ? min.get(basename) : x;
+            int low = min.get(basename).containsKey(channel) ? min.get(basename).get(channel) : x;
             if (x <= low) {
                 low = x;
-                min.put(basename, low);
+                min.get(basename).put(channel, low);
             }
-            int high = max.containsKey(basename) ? max.get(basename) : x;
+            int high = max.get(basename).containsKey(channel) ? max.get(basename).get(channel) : x;
             if (x >= high) {
                 high = x;
-                max.put(basename, high);
+                max.get(basename).put(channel, high);
             }
             
             cmds.add(cmd+" \"../../"+baseDir+"/"+dir+"/"+imgName+"\" \""+rename+"\"");
@@ -84,10 +97,25 @@ public class CombineImages {
         }
         
         NumberFormat nf = new DecimalFormat("00000");
+        
         for(String basename : min.keySet()) {
-            String pattern = basename+"_C<Cep192,EB3>_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
+            int globalMin = 0;
+            int globalMax = 10000;
+            for (int x : min.get(basename).values()) {
+                if (x > globalMin)
+                    globalMin = x;
+            }
+            for (int x : max.get(basename).values()) {
+                if (x < globalMax)
+                    globalMax = x;
+            }
+            String pattern = basename+"_C<Cep192,EB3>_T<"+nf.format(globalMin)+"-"+nf.format(globalMax)+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
+        
+        // Manual correction because Embryo2.mCherry.Cam_Right_00237.tif is missing
+        cmds.add("echo \"Embryo2_C<Cep192,EB3>_T<00085-00236>.tif\" > \"Embryo2.pattern\"");
         
         cmds.add("cd ../..");
         return cmds;
@@ -107,6 +135,7 @@ public class CombineImages {
                 continue;
             String imgName = file.substring(file.lastIndexOf('/')+1);
             cmds.add(cmd+" \"../../"+baseDir+"/"+dir+"/"+imgName+"\" \""+imgName+"\"");
+            addFilePath(dir, imgName);
         }
         
         cmds.add("cd ../..");
@@ -127,6 +156,7 @@ public class CombineImages {
                 continue;
             String imgName = file.substring(file.lastIndexOf('/')+1);
             cmds.add(cmd+" \"../../"+baseDir+"/"+dir+"/"+imgName+"\" \""+imgName+"\"");
+            addFilePath(dir, imgName);
         }
         
         cmds.add("cd ../..");
@@ -143,8 +173,8 @@ public class CombineImages {
         cmds.add("mkdir -p "+outputDir+"/"+dir);
         cmds.add("cd "+outputDir+"/"+dir);
         
-        HashMap<String, Integer> min = new HashMap<String, Integer>();
-        HashMap<String, Integer> max = new HashMap<String, Integer>();
+        HashMap<String, HashMap<String, Integer>> min = new HashMap<String, HashMap<String, Integer>>();
+        HashMap<String, HashMap<String, Integer>> max = new HashMap<String, HashMap<String, Integer>>();
         
         for (String file : files) {
             if (!file.startsWith("./"+dir+"/") || !file.endsWith(".tif"))
@@ -166,16 +196,21 @@ public class CombineImages {
             
             String rename = basename+"_C"+channel+"_T"+name[4]+".tif";
             
+            if (!min.containsKey(basename))
+                min.put(basename, new HashMap<String, Integer>());
+            if (!max.containsKey(basename))
+                max.put(basename, new HashMap<String, Integer>());
+            
             int x = Integer.parseInt(name[4]);
-            int low = min.containsKey(basename) ? min.get(basename) : x;
+            int low = min.get(basename).containsKey(channel) ? min.get(basename).get(channel) : x;
             if (x <= low) {
                 low = x;
-                min.put(basename, low);
+                min.get(basename).put(channel, low);
             }
-            int high = max.containsKey(basename) ? max.get(basename) : x;
+            int high = max.get(basename).containsKey(channel) ? max.get(basename).get(channel) : x;
             if (x >= high) {
                 high = x;
-                max.put(basename, high);
+                max.get(basename).put(channel, high);
             }
             
             cmds.add(cmd+" \"../../"+baseDir+"/"+dir+"/"+imgName+"\" \""+rename+"\"");
@@ -184,8 +219,19 @@ public class CombineImages {
         
         NumberFormat nf = new DecimalFormat("00000");
         for(String basename : min.keySet()) {
-            String pattern = basename+"_C<Major satellites TALE,Minor satellites TALE,mCherry>_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
+            int globalMin = 0;
+            int globalMax = 10000;
+            for (int x : min.get(basename).values()) {
+                if (x > globalMin)
+                    globalMin = x;
+            }
+            for (int x : max.get(basename).values()) {
+                if (x < globalMax)
+                    globalMax = x;
+            }
+            String pattern = basename+"_C<Major satellites TALE,Minor satellites TALE,EB3>_T<"+nf.format(globalMin)+"-"+nf.format(globalMax)+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -202,8 +248,8 @@ public class CombineImages {
         cmds.add("mkdir -p "+outputDir+"/"+dir);
         cmds.add("cd "+outputDir+"/"+dir);
         
-        HashMap<String, Integer> min = new HashMap<String, Integer>();
-        HashMap<String, Integer> max = new HashMap<String, Integer>();
+        HashMap<String, HashMap<String, Integer>> min = new HashMap<String, HashMap<String, Integer>>();
+        HashMap<String, HashMap<String, Integer>> max = new HashMap<String, HashMap<String, Integer>>();
         
         for (String file : files) {
             if (!file.startsWith("./"+dir+"/") || !file.endsWith(".tif"))
@@ -223,16 +269,21 @@ public class CombineImages {
             
             String rename = basename+"_C"+channel+"_T"+name[8]+".tif";
             
+            if (!min.containsKey(basename))
+                min.put(basename, new HashMap<String, Integer>());
+            if (!max.containsKey(basename))
+                max.put(basename, new HashMap<String, Integer>());
+            
             int x = Integer.parseInt(name[8]);
-            int low = min.containsKey(basename) ? min.get(basename) : x;
+            int low = min.get(basename).containsKey(channel) ? min.get(basename).get(channel) : x;
             if (x <= low) {
                 low = x;
-                min.put(basename, low);
+                min.get(basename).put(channel, low);
             }
-            int high = max.containsKey(basename) ? max.get(basename) : x;
+            int high = max.get(basename).containsKey(channel) ? max.get(basename).get(channel) : x;
             if (x >= high) {
                 high = x;
-                max.put(basename, high);
+                max.get(basename).put(channel, high);
             }
             
             cmds.add(cmd+" \"../../"+baseDir+"/"+dir+"/"+imgName+"\" \""+rename+"\"");
@@ -241,8 +292,19 @@ public class CombineImages {
         
         NumberFormat nf = new DecimalFormat("00000");
         for(String basename : min.keySet()) {
-            String pattern = basename+"_C<alpha-tubulin,H2B>_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
+            int globalMin = 0;
+            int globalMax = 10000;
+            for (int x : min.get(basename).values()) {
+                if (x > globalMin)
+                    globalMin = x;
+            }
+            for (int x : max.get(basename).values()) {
+                if (x < globalMax)
+                    globalMax = x;
+            }
+            String pattern = basename+"_C<alpha-tubulin,H2B>_T<"+nf.format(globalMin)+"-"+nf.format(globalMax)+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -287,6 +349,7 @@ public class CombineImages {
         for(String basename : names) {
             String pattern = basename+"_C<Major satellites TALE,Minor satellites TALE>.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -303,8 +366,8 @@ public class CombineImages {
         cmds.add("mkdir -p "+outputDir+"/"+dir);
         cmds.add("cd "+outputDir+"/"+dir);
         
-        HashMap<String, Integer> min = new HashMap<String, Integer>();
-        HashMap<String, Integer> max = new HashMap<String, Integer>();
+        HashMap<String, HashMap<String, Integer>> min = new HashMap<String, HashMap<String, Integer>>();
+        HashMap<String, HashMap<String, Integer>> max = new HashMap<String, HashMap<String, Integer>>();
         
         for (String file : files) {
             if (!file.startsWith("./"+dir+"/") || !file.endsWith(".tif"))
@@ -326,26 +389,42 @@ public class CombineImages {
             
             String rename = basename+"_C"+channel+"_T"+name[2]+".tif";
             
+            if (!min.containsKey(basename))
+                min.put(basename, new HashMap<String, Integer>());
+            if (!max.containsKey(basename))
+                max.put(basename, new HashMap<String, Integer>());
+            
             int x = Integer.parseInt(name[2]);
-            int low = min.containsKey(basename) ? min.get(basename) : x;
+            int low = min.get(basename).containsKey(channel) ? min.get(basename).get(channel) : x;
             if (x <= low) {
                 low = x;
-                min.put(basename, low);
+                min.get(basename).put(channel, low);
             }
-            int high = max.containsKey(basename) ? max.get(basename) : x;
+            int high = max.get(basename).containsKey(channel) ? max.get(basename).get(channel) : x;
             if (x >= high) {
                 high = x;
-                max.put(basename, high);
+                max.get(basename).put(channel, high);
             }
             
             cmds.add(cmd+" \"../../"+baseDir+"/"+dir+"/"+imgName+"\" \""+rename+"\"");
             addMapping(file, basename+".pattern");
         }
         
-        NumberFormat nf = new DecimalFormat("00000");
+        NumberFormat nf = new DecimalFormat("000000");
         for(String basename : min.keySet()) {
-            String pattern = basename+"_C<Major satellites TALE,Minor satellites TALE,H2B>_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
+            int globalMin = 0;
+            int globalMax = 10000;
+            for (int x : min.get(basename).values()) {
+                if (x > globalMin)
+                    globalMin = x;
+            }
+            for (int x : max.get(basename).values()) {
+                if (x < globalMax)
+                    globalMax = x;
+            }
+            String pattern = basename+"_C<Major satellites TALE,Minor satellites TALE,H2B>_T<"+nf.format(globalMin)+"-"+nf.format(globalMax)+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -399,6 +478,7 @@ public class CombineImages {
         for(String basename : names) {
             String pattern = basename+"_T<0-7>.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -433,8 +513,6 @@ public class CombineImages {
             String basename = name[0];
             names.add(basename);
             
-            addMapping(file, basename+".pattern");
-            
             String z = name[5].replace("Z", "");
             String t = name[4].replace("T", "");
             
@@ -462,15 +540,17 @@ public class CombineImages {
                 maxT.put(basename, high);
             }
             
-            // no renaming required, just copy the files to the
-            // import directory
-            cmds.add(cmd+" \"../../"+baseDir+"/"+dir+"/"+imgName+"\" \""+imgName+"\"");
+            String rename = basename+imgName.substring(imgName.indexOf("_T"));
+            
+            cmds.add(cmd+" \"../../"+baseDir+"/"+dir+"/"+imgName+"\" \""+rename+"\"");
+            addMapping(file, basename+".pattern");
         }
         
         NumberFormat nf = new DecimalFormat("000");
         for(String basename : names) {
-            String pattern = basename+".*_T<"+nf.format(minT.get(basename))+"-"+nf.format(maxT.get(basename))+">_Z<"+nf.format(minZ.get(basename))+"-"+nf.format(maxZ.get(basename))+">.*.tif";
+            String pattern = basename+"_T<"+nf.format(minT.get(basename))+"-"+nf.format(maxT.get(basename))+">_Z<"+nf.format(minZ.get(basename))+"-"+nf.format(maxZ.get(basename))+">_C<01>.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -541,6 +621,7 @@ public class CombineImages {
             }
             String pattern = basename+"_C<"+channelPattern+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -586,7 +667,11 @@ public class CombineImages {
         for(String basename : names) {
             String pattern = basename+"_C<DNA,EdU>_T<0>.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
+        
+        // Manual correction because second channel file 02_Cell_Stage.Embryo04.Alexa_647.000000_00.tif is missing:
+        cmds.add("echo \"02_Cell_Stage.Embryo04_C<DNA>_T<0>.tif\" > \"02_Cell_Stage.Embryo04.pattern\"");
         
         cmds.add("cd ../..");
         return cmds;
@@ -602,8 +687,8 @@ public class CombineImages {
         cmds.add("mkdir -p "+outputDir+"/"+dir);
         cmds.add("cd "+outputDir+"/"+dir);
         
-        HashMap<String, Integer> min = new HashMap<String, Integer>();
-        HashMap<String, Integer> max = new HashMap<String, Integer>();
+        HashMap<String, HashMap<String, Integer>> min = new HashMap<String, HashMap<String, Integer>>();
+        HashMap<String, HashMap<String, Integer>> max = new HashMap<String, HashMap<String, Integer>>();
         
         for (String file : files) {
             if (!file.startsWith("./"+dir+"/") || !file.endsWith(".tif"))
@@ -626,16 +711,21 @@ public class CombineImages {
 
             String rename = basename+"_C"+channel+"_T"+name[6]+".tif";
             
+            if (!min.containsKey(basename))
+                min.put(basename, new HashMap<String, Integer>());
+            if (!max.containsKey(basename))
+                max.put(basename, new HashMap<String, Integer>());
+            
             int x = Integer.parseInt(name[6]);
-            int low = min.containsKey(basename) ? min.get(basename) : x;
+            int low = min.get(basename).containsKey(channel) ? min.get(basename).get(channel) : x;
             if (x <= low) {
                 low = x;
-                min.put(basename, low);
+                min.get(basename).put(channel, low);
             }
-            int high = max.containsKey(basename) ? max.get(basename) : x;
+            int high = max.get(basename).containsKey(channel) ? max.get(basename).get(channel) : x;
             if (x >= high) {
                 high = x;
-                max.put(basename, high);
+                max.get(basename).put(channel, high);
             }
             
             cmds.add(cmd+" \"../../"+baseDir+"/"+dir+"/"+imgName+"\" \""+rename+"\"");
@@ -644,8 +734,19 @@ public class CombineImages {
         
         NumberFormat nf = new DecimalFormat("00000");
         for(String basename : min.keySet()) {
-            String pattern = basename+"_C<Major satellites TALE,Minor satellites TALE,EB3>_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
+            int globalMin = 0;
+            int globalMax = 10000;
+            for (int x : min.get(basename).values()) {
+                if (x > globalMin)
+                    globalMin = x;
+            }
+            for (int x : max.get(basename).values()) {
+                if (x < globalMax)
+                    globalMax = x;
+            }
+            String pattern = basename+"_C<Major satellites TALE,Minor satellites TALE,EB3>_T<"+nf.format(globalMin)+"-"+nf.format(globalMax)+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -698,6 +799,7 @@ public class CombineImages {
         for(String basename : min.keySet()) {
             String pattern = basename+"_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -750,6 +852,7 @@ public class CombineImages {
         for(String basename : min.keySet()) {
             String pattern = basename+"_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -802,6 +905,7 @@ public class CombineImages {
         for(String basename : min.keySet()) {
             String pattern = basename+"_T<"+nf.format(min.get(basename))+"-"+nf.format(max.get(basename))+">.tif";
             cmds.add("echo \""+pattern+"\" > \""+basename+".pattern\"");
+            addFilePath(dir, basename+".pattern");
         }
         
         cmds.add("cd ../..");
@@ -869,6 +973,8 @@ public class CombineImages {
             sb.append(BasicCSVUtils.join(parts)+"\n");
         }
         CSVTools.writeFile("/Users/dlindner/Repositories/idr0045-reichmann/experimentA/filenameImageMapping.csv", sb.toString());
+        
+        CSVTools.writeFile(filePathsFile, filePaths);
     }
 
 }
