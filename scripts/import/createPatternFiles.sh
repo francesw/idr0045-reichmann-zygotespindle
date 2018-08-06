@@ -2,10 +2,10 @@
 #
 # Create the *.pattern files and symbolic links with
 # the _C, _Z, _T prefixes linking to the original files
-# (This script needs to run in the parent directory of 20180709-ftp and 20180606-renamed!)
+# (This script needs to run in the parent directory of 20180709-ftp and 20180806-renamed!)
 
-mkdir -p 20180606-renamed/Figure01A
-cd 20180606-renamed/Figure01A
+mkdir -p 20180806-renamed/Figure01A
+cd 20180806-renamed/Figure01A
 ln -s "../../20180709-ftp/Figure01A/Embryo10.EGFP.Cam_Right_00041.tif" "Embryo10_CCep192_T00041.tif"
 ln -s "../../20180709-ftp/Figure01A/Embryo10.EGFP.Cam_Right_00042.tif" "Embryo10_CCep192_T00042.tif"
 ln -s "../../20180709-ftp/Figure01A/Embryo10.EGFP.Cam_Right_00043.tif" "Embryo10_CCep192_T00043.tif"
@@ -4075,8 +4075,8 @@ echo "Embryo12_C<Cep192,EB3>_T<00080-00260>.tif" > "Embryo12.pattern"
 echo "Embryo10_C<Cep192,EB3>_T<00041-00160>.tif" > "Embryo10.pattern"
 echo "Embryo2_C<Cep192,EB3>_T<00085-00236>.tif" > "Embryo2.pattern"
 cd ../..
-mkdir -p 20180606-renamed/Figure01C
-cd 20180606-renamed/Figure01C
+mkdir -p 20180806-renamed/Figure01C
+cd 20180806-renamed/Figure01C
 ln -s "../../20180709-ftp/Figure01C/Metaphase1.lif" "Metaphase1.lif"
 ln -s "../../20180709-ftp/Figure01C/Metaphase2.lif" "Metaphase2.lif"
 ln -s "../../20180709-ftp/Figure01C/Metaphase3.lif" "Metaphase3.lif"
@@ -4088,8 +4088,8 @@ ln -s "../../20180709-ftp/Figure01C/Prometaphase1.lif" "Prometaphase1.lif"
 ln -s "../../20180709-ftp/Figure01C/Prometaphase3.lif" "Prometaphase3.lif"
 ln -s "../../20180709-ftp/Figure01C/Prometaphase4.lif" "Prometaphase4.lif"
 cd ../..
-mkdir -p 20180606-renamed/Figure01D
-cd 20180606-renamed/Figure01D
+mkdir -p 20180806-renamed/Figure01D
+cd 20180806-renamed/Figure01D
 ln -s "../../20180709-ftp/Figure01D/PM10.tif" "PM10.tif"
 ln -s "../../20180709-ftp/Figure01D/PM11.tif" "PM11.tif"
 ln -s "../../20180709-ftp/Figure01D/PM12.tif" "PM12.tif"
@@ -4115,8 +4115,8 @@ ln -s "../../20180709-ftp/Figure01D/PM7.tif" "PM7.tif"
 ln -s "../../20180709-ftp/Figure01D/PM8.tif" "PM8.tif"
 ln -s "../../20180709-ftp/Figure01D/PM9.tif" "PM9.tif"
 cd ../..
-mkdir -p 20180606-renamed/Figure02
-cd 20180606-renamed/Figure02
+mkdir -p 20180806-renamed/Figure02
+cd 20180806-renamed/Figure02
 ln -s "../../20180709-ftp/Figure02/Embryo01.EGFP.Cam_Right_00230.tif" "Embryo01_CMajor satellites TALE_T00230.tif"
 ln -s "../../20180709-ftp/Figure02/Embryo01.EGFP.Cam_Right_00231.tif" "Embryo01_CMajor satellites TALE_T00231.tif"
 ln -s "../../20180709-ftp/Figure02/Embryo01.EGFP.Cam_Right_00232.tif" "Embryo01_CMajor satellites TALE_T00232.tif"
@@ -10793,8 +10793,8 @@ echo "Embryo01_C<Major satellites TALE,Minor satellites TALE,EB3>_T<00230-00359>
 echo "Embryo12_C<Major satellites TALE,Minor satellites TALE,EB3>_T<00000-00200>.tif" > "Embryo12.pattern"
 echo "Embryo10_C<Major satellites TALE,Minor satellites TALE,EB3>_T<00000-00259>.tif" > "Embryo10.pattern"
 cd ../..
-mkdir -p 20180606-renamed/Figure03
-cd 20180606-renamed/Figure03
+mkdir -p 20180806-renamed/Figure03
+cd 20180806-renamed/Figure03
 ln -s "../../20180709-ftp/Figure03/Embryo01.Position_0.stack_0.EGFP.Cam_Right_00000.tif" "Embryo01_Calpha-tubulin_T00000.tif"
 ln -s "../../20180709-ftp/Figure03/Embryo01.Position_0.stack_0.EGFP.Cam_Right_00001.tif" "Embryo01_Calpha-tubulin_T00001.tif"
 ln -s "../../20180709-ftp/Figure03/Embryo01.Position_0.stack_0.EGFP.Cam_Right_00002.tif" "Embryo01_Calpha-tubulin_T00002.tif"
@@ -14063,8 +14063,8 @@ echo "Embryo01_C<alpha-tubulin,H2B>_T<00000-00060>.tif" > "Embryo01.pattern"
 echo "Embryo12_C<alpha-tubulin,H2B>_T<00000-00079>.tif" > "Embryo12.pattern"
 echo "Embryo10_C<alpha-tubulin,H2B>_T<00000-00080>.tif" > "Embryo10.pattern"
 cd ../..
-mkdir -p 20180606-renamed/Figure04
-cd 20180606-renamed/Figure04
+mkdir -p 20180806-renamed/Figure04
+cd 20180806-renamed/Figure04
 ln -s "../../20180709-ftp/Figure04/MoNoc.Cell01.Position_0.stack_0.EGFP.Cam_Right_00008.tif" "MoNoc.Cell01_CMajor satellites TALE.tif"
 ln -s "../../20180709-ftp/Figure04/MoNoc.Cell01.Position_0.stack_0.iRFP.Cam_Right_00008.tif" "MoNoc.Cell01_CMinor satellites TALE.tif"
 ln -s "../../20180709-ftp/Figure04/MoNoc.Cell02.Position_0.stack_0.EGFP.Cam_Right_00006.tif" "MoNoc.Cell02_CMajor satellites TALE.tif"
@@ -14243,8 +14243,8 @@ echo "Untreated.Cell23_C<Major satellites TALE,Minor satellites TALE>.tif" > "Un
 echo "Untreated.Cell20_C<Major satellites TALE,Minor satellites TALE>.tif" > "Untreated.Cell20.pattern"
 echo "Untreated.Cell21_C<Major satellites TALE,Minor satellites TALE>.tif" > "Untreated.Cell21.pattern"
 cd ../..
-mkdir -p 20180606-renamed/SupplementaryFigure01
-cd 20180606-renamed/SupplementaryFigure01
+mkdir -p 20180806-renamed/SupplementaryFigure01
+cd 20180806-renamed/SupplementaryFigure01
 ln -s "../../20180709-ftp/SupplementaryFigure01/Embryo10.EGFP.000000_00.tif" "Embryo10_CMajor satellites TALE_T000000.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure01/Embryo10.EGFP.000001_00.tif" "Embryo10_CMajor satellites TALE_T000001.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure01/Embryo10.EGFP.000002_00.tif" "Embryo10_CMajor satellites TALE_T000002.tif"
@@ -17547,8 +17547,8 @@ echo "Embryo11_C<Major satellites TALE,Minor satellites TALE,H2B>_T<000001-00005
 echo "Embryo12_C<Major satellites TALE,Minor satellites TALE,H2B>_T<000000-000059>.tif" > "Embryo12.pattern"
 echo "Embryo10_C<Major satellites TALE,Minor satellites TALE,H2B>_T<000000-000059>.tif" > "Embryo10.pattern"
 cd ../..
-mkdir -p 20180606-renamed/SupplementaryFigure02
-cd 20180606-renamed/SupplementaryFigure02
+mkdir -p 20180806-renamed/SupplementaryFigure02
+cd 20180806-renamed/SupplementaryFigure02
 ln -s "../../20180709-ftp/SupplementaryFigure02/0min.embryo1.tif" "embryo1_T0.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure02/0min.embryo2.tif" "embryo2_T0.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure02/0min.embryo3.tif" "embryo3_T0.tif"
@@ -17586,8 +17586,8 @@ echo "embryo2_T<0-7>.tif" > "embryo2.pattern"
 echo "embryo3_T<0-7>.tif" > "embryo3.pattern"
 echo "embryo4_T<0-7>.tif" > "embryo4.pattern"
 cd ../..
-mkdir -p 20180606-renamed/SupplementaryFigure05
-cd 20180606-renamed/SupplementaryFigure05
+mkdir -p 20180806-renamed/SupplementaryFigure05
+cd 20180806-renamed/SupplementaryFigure05
 ln -s "../../20180709-ftp/SupplementaryFigure05/Metaphase1.Cam_Right_00000 (16)-Enhancement Filter 2_T001_Z001_C01.tif" "Metaphase1_T001_Z001_C01.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure05/Metaphase1.Cam_Right_00000 (16)-Enhancement Filter 2_T001_Z002_C01.tif" "Metaphase1_T001_Z002_C01.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure05/Metaphase1.Cam_Right_00000 (16)-Enhancement Filter 2_T001_Z003_C01.tif" "Metaphase1_T001_Z003_C01.tif"
@@ -19445,8 +19445,8 @@ echo "Prometaphase3_T<001-060>_Z<001-005>_C<01>.tif" > "Prometaphase3.pattern"
 echo "Prometaphase2_T<001-060>_Z<001-005>_C<01>.tif" > "Prometaphase2.pattern"
 echo "Prometaphase1_T<001-060>_Z<001-005>_C<01>.tif" > "Prometaphase1.pattern"
 cd ../..
-mkdir -p 20180606-renamed/SupplementaryFigure06A
-cd 20180606-renamed/SupplementaryFigure06A
+mkdir -p 20180806-renamed/SupplementaryFigure06A
+cd 20180806-renamed/SupplementaryFigure06A
 ln -s "../../20180709-ftp/SupplementaryFigure06A/2Cell.Cell01-1.Position_0.stack_0.EGFP.000086_00.tif" "2Cell.Cell01-1.Position_0.stack_0.T000086_00_CEGFP.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure06A/2Cell.Cell01-1.Position_0.stack_0.iRFP.000086_00.tif" "2Cell.Cell01-1.Position_0.stack_0.T000086_00_CiRFP.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure06A/2Cell.Cell01-1.Position_0.stack_0.mCherry.000086_00.tif" "2Cell.Cell01-1.Position_0.stack_0.T000086_00_CmCherry.tif"
@@ -19798,8 +19798,8 @@ echo "4Cell.Cell07-2.Position_0.stack_0.Ext.T000296_00_C<iRFP,mCherry>.tif" > "4
 echo "4Cell.Cell10-1.Position_0.stack_0.T000237_00_C<iRFP,mCherry>.tif" > "4Cell.Cell10-1.Position_0.stack_0.T000237_00.pattern"
 echo "4Cell.Cell10-1.Position_0.stack_0.Ext.T000239_00_C<iRFP,mCherry>.tif" > "4Cell.Cell10-1.Position_0.stack_0.Ext.T000239_00.pattern"
 cd ../..
-mkdir -p 20180606-renamed/SupplementaryFigure06H
-cd 20180606-renamed/SupplementaryFigure06H
+mkdir -p 20180806-renamed/SupplementaryFigure06H
+cd 20180806-renamed/SupplementaryFigure06H
 ln -s "../../20180709-ftp/SupplementaryFigure06H/02_Cell_Stage.Embryo01.Alexa_647.Alexa_647.tif" "02_Cell_Stage.Embryo01_CEdU_T0.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure06H/02_Cell_Stage.Embryo01.EGFP.EGFP.tif" "02_Cell_Stage.Embryo01_CDNA_T0.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure06H/02_Cell_Stage.Embryo02.Alexa_647.000000_00.tif" "02_Cell_Stage.Embryo02_CEdU_T0.tif"
@@ -20008,8 +20008,8 @@ echo "02_Cell_Stage.Embryo09_C<DNA,EdU>_T<0>.tif" > "02_Cell_Stage.Embryo09.patt
 echo "02_Cell_Stage.Embryo08_C<DNA,EdU>_T<0>.tif" > "02_Cell_Stage.Embryo08.pattern"
 echo "02_Cell_Stage.Embryo04_C<DNA>_T<0>.tif" > "02_Cell_Stage.Embryo04.pattern"
 cd ../..
-mkdir -p 20180606-renamed/SupplementaryFigure08
-cd 20180606-renamed/SupplementaryFigure08
+mkdir -p 20180806-renamed/SupplementaryFigure08
+cd 20180806-renamed/SupplementaryFigure08
 ln -s "../../20180709-ftp/SupplementaryFigure08/MoNoc.Monastrol.Embryo1.EGFP.Cam_Right_00000.tif" "MoNoc.Monastrol.Embryo1_CMajor satellites TALE_T00000.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure08/MoNoc.Monastrol.Embryo1.EGFP.Cam_Right_00001.tif" "MoNoc.Monastrol.Embryo1_CMajor satellites TALE_T00001.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure08/MoNoc.Monastrol.Embryo1.EGFP.Cam_Right_00002.tif" "MoNoc.Monastrol.Embryo1_CMajor satellites TALE_T00002.tif"
@@ -24467,8 +24467,8 @@ echo "MoNoc.Monastrol.Embryo3_C<Major satellites TALE,Minor satellites TALE,EB3>
 echo "NocMo.Washout.Embryo2_C<Major satellites TALE,Minor satellites TALE,EB3>_T<00000-00180>.tif" > "NocMo.Washout.Embryo2.pattern"
 echo "NocMo.Washout.Embryo1_C<Major satellites TALE,Minor satellites TALE,EB3>_T<00000-00180>.tif" > "NocMo.Washout.Embryo1.pattern"
 cd ../..
-mkdir -p 20180606-renamed/SupplementaryFigure09
-cd 20180606-renamed/SupplementaryFigure09
+mkdir -p 20180806-renamed/SupplementaryFigure09
+cd 20180806-renamed/SupplementaryFigure09
 ln -s "../../20180709-ftp/SupplementaryFigure09/MoNoc.2_Cell.01.tif" "MoNoc.2_Cell_T01.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure09/MoNoc.2_Cell.02.tif" "MoNoc.2_Cell_T02.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure09/MoNoc.2_Cell.03.tif" "MoNoc.2_Cell_T03.tif"
@@ -24692,8 +24692,8 @@ echo "MoNoc.2_Cell_T<01-39>.tif" > "MoNoc.2_Cell.pattern"
 echo "Untreated.2_Cell_T<01-26>.tif" > "Untreated.2_Cell.pattern"
 echo "NocMo.2_Cell_T<01-47>.tif" > "NocMo.2_Cell.pattern"
 cd ../..
-mkdir -p 20180606-renamed/SupplementaryFigure10A
-cd 20180606-renamed/SupplementaryFigure10A
+mkdir -p 20180806-renamed/SupplementaryFigure10A
+cd 20180806-renamed/SupplementaryFigure10A
 ln -s "../../20180709-ftp/SupplementaryFigure10A/MoNoc.2_Cell.01.tif" "MoNoc.2_Cell_T01.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure10A/MoNoc.2_Cell.02.tif" "MoNoc.2_Cell_T02.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure10A/MoNoc.2_Cell.03.tif" "MoNoc.2_Cell_T03.tif"
@@ -24836,8 +24836,8 @@ echo "MoNoc.2_Cell_T<01-19>.tif" > "MoNoc.2_Cell.pattern"
 echo "Untreated.2_Cell_T<01-37>.tif" > "Untreated.2_Cell.pattern"
 echo "NocMo.2_Cell_T<01-34>.tif" > "NocMo.2_Cell.pattern"
 cd ../..
-mkdir -p 20180606-renamed/SupplementaryFigure10B
-cd 20180606-renamed/SupplementaryFigure10B
+mkdir -p 20180806-renamed/SupplementaryFigure10B
+cd 20180806-renamed/SupplementaryFigure10B
 ln -s "../../20180709-ftp/SupplementaryFigure10B/MoNoc.2_Cell.01.tif" "MoNoc.2_Cell_T01.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure10B/MoNoc.2_Cell.02.tif" "MoNoc.2_Cell_T02.tif"
 ln -s "../../20180709-ftp/SupplementaryFigure10B/MoNoc.2_Cell.03.tif" "MoNoc.2_Cell_T03.tif"
