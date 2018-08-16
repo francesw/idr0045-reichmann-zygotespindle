@@ -1,4 +1,4 @@
-Dataset Name,Image Name,Term Source 1 REF,Term Source 1 Accession,Characteristics [Embryonic stage],Term Source 2 REF,Protocol REF,Protocol REF,Protocol REF,Source Name,Experimental Condition [ # fill in],Comment [Image File Path],Comment [Image File Type],Channels,Characteristics [Organism]
+Dataset Name,Image Name,Term Source 1 REF,Term Source 1 Accession,Characteristics [Embryonic stage],Term Source 2 REF,Protocol REF,Protocol REF,Protocol REF,Source Name,Experimental Condition,Comment [Image File Path],Comment [Image File Type],Channels,Characteristics [Organism]
 Figure01A,Embryo1.pattern,NCBITaxon,10090,Zygote,EFO,growth protocol,treatment protocol,image acquisition and feature extraction protocol,Embryo1,,Reichman-2018/Figure01A,raw,Cep192;EB3,Mus musculus
 Figure01A,Embryo10.pattern,NCBITaxon,10090,Zygote,EFO,growth protocol,treatment protocol,image acquisition and feature extraction protocol,Embryo10,,Reichman-2018/Figure01A,raw,Cep192;EB3,Mus musculus
 Figure01A,Embryo11.pattern,NCBITaxon,10090,Zygote,EFO,growth protocol,treatment protocol,image acquisition and feature extraction protocol,Embryo11,,Reichman-2018/Figure01A,raw,Cep192;EB3,Mus musculus
