@@ -1,0 +1,14 @@
+{
+  "channels": {
+    "1": {
+      "color": "ff00ff", 
+      "active": true, 
+      "label": "Cep192"
+    }, 
+    "2": {
+      "color": "00ff00", 
+      "active": true, 
+      "label": "EB3"
+    }
+  }
+}

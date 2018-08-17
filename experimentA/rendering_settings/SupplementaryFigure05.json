@@ -1,0 +1,9 @@
+{
+  "channels": {
+    "1": {
+      "color": "ffffff", 
+      "active": true, 
+      "label": "EGFP-EB3"
+    }
+  }
+}

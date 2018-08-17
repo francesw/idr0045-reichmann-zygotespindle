@@ -1,0 +1,19 @@
+{
+  "channels": {
+    "1": {
+      "color": "00ffff", 
+      "active": true, 
+      "label": "EGFP"
+    }, 
+    "2": {
+      "color": "ff00ff", 
+      "active": true, 
+      "label": "iRFP"
+    }, 
+    "3": {
+      "color": "ffffff", 
+      "active": true, 
+      "label": "mCherry"
+    }
+  }
+}

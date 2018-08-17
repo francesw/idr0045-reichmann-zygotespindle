@@ -1,0 +1,14 @@
+{
+  "channels": {
+    "1": {
+      "color": "ff00ff", 
+      "active": true, 
+      "label": "Major TALE"
+    }, 
+    "2": {
+      "color": "00ffff", 
+      "active": true, 
+      "label": "Minor TALE"
+    }
+  }
+}

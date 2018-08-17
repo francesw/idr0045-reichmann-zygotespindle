@@ -1,0 +1,14 @@
+{
+  "channels": {
+    "1": {
+      "color": "0000ff", 
+      "active": true, 
+      "label": "Hoechst"
+    }, 
+    "2": {
+      "color": "00ff00", 
+      "active": true, 
+      "label": "Ring1B"
+    }
+  }
+}
