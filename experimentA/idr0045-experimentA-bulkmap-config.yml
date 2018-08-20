@@ -21,15 +21,20 @@ defaults:
 
 columns:
 
-  - name: Characteristics [Embryonic stage]
-    clientname: Embryonic stage
+  - name: Channels
+    clientname: Channels
+    include: yes
+  - name: Characteristics [Development stage]
+    clientname: Development stage
     include: yes
   - name: Experimental Condition
     clientname: Experimental Condition
     include: yes
   - name: Term Source 1 Accession
     clientname: NCBI Taxonomy ID
-    clientvalue: https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id={{ value|urlencode }}
+    include: yes
+  - name: Term Source 2 Accession
+    clientname: UBERON
     include: yes
 
   ######################################################################
