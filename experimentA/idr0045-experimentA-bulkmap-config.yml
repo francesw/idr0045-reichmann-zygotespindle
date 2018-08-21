@@ -30,12 +30,6 @@ columns:
   - name: Experimental Condition
     clientname: Experimental Condition
     include: yes
-  - name: Term Source 1 Accession
-    clientname: NCBI Taxonomy ID
-    include: yes
-  - name: Term Source 2 Accession
-    clientname: UBERON
-    include: yes
 
   ######################################################################
   # mapr groups
@@ -46,4 +40,9 @@ columns:
       columns:
         - name: Characteristics [Organism]
           clientname: Organism
+          include: yes
+        - name: Term Source 1 Accession
+          clientname: Organism URL
+          clientvalue: >
+                https://www.ncbi.nlm.nih.gov/taxonomy/{{ value|urlencode }}
           include: yes
