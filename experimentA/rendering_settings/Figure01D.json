@@ -1,0 +1,24 @@
+{
+  "channels": {
+    "1": {
+      "color": "00ff00", 
+      "active": true, 
+      "label": "Tubulin"
+    }, 
+    "2": {
+      "color": "ffffff", 
+      "active": true, 
+      "label": "Crest"
+    }, 
+    "3": {
+      "color": "0000ff", 
+      "active": true, 
+      "label": "Hoechst"
+    }, 
+    "4": {
+      "color": "ff00ff", 
+      "active": true, 
+      "label": "Percentrin"
+    }
+  }
+}

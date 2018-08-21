@@ -1,0 +1,19 @@
+{
+  "channels": {
+    "1": {
+      "color": "ffffff", 
+      "active": true, 
+      "label": "DNA"
+    }, 
+    "2": {
+      "color": "00ffff", 
+      "active": true, 
+      "label": "5hmC"
+    }, 
+    "3": {
+      "color": "00ff00", 
+      "active": true, 
+      "label": "5mC"
+    }
+  }
+}
