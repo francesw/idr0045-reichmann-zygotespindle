@@ -41,8 +41,3 @@ columns:
         - name: Characteristics [Organism]
           clientname: Organism
           include: yes
-        - name: Term Source 1 Accession
-          clientname: Organism URL
-          clientvalue: >
-                https://www.ncbi.nlm.nih.gov/taxonomy/{{ value|urlencode }}
-          include: yes
