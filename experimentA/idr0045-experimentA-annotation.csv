@@ -14,15 +14,16 @@ Figure01A,Embryo8.pattern,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,Emb
 Figure01A,Embryo9.pattern,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,Embryo9,,Reichman-2018/Figure01A,raw,Cep192;EB3
 Figure01C,Metaphase1.lif,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,Metaphase1,metaphase,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
 Figure01C,Metaphase2.lif,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,Metaphase2,metaphase,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
-Figure01C,Metaphase3.lif,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,Metaphase3,metaphase,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
-Figure01C,Metaphase4.tif,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,Metaphase4,metaphase,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
+Figure01C,Metaphase3.lif [Series003],Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,Metaphase3,metaphase,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
+Figure01C,Metaphase3.lif [Series006],Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,Metaphase3,metaphase,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
 Figure01C,MicrotubuleBallStage1.lif,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,MicrotubuleBallStage1,microtubule ball stage,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
 Figure01C,MicrotubuleBallStage2.lif,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,MicrotubuleBallStage2,microtubule ball stage,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
 Figure01C,MicrotubuleBallStage3.lif,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,MicrotubuleBallStage3,microtubule ball stage,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
-Figure01C,MicrotubuleBallStage4.lif,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,MicrotubuleBallStage4,microtubule ball stage,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
+Figure01C,MicrotubuleBallStage4.lif [Series003],Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,MicrotubuleBallStage4,microtubule ball stage,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
+Figure01C,MicrotubuleBallStage4.lif [Series006],Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,MicrotubuleBallStage4,microtubule ball stage,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
 Figure01C,Prometaphase1.lif,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,Prometaphase1,prometaphase,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
-Figure01C,Prometaphase2.tif,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,Prometaphase2,prometaphase,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
-Figure01C,Prometaphase3.lif,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,Prometaphase3,prometaphase,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
+Figure01C,Prometaphase3.lif [Preview002],Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,Prometaphase3,prometaphase,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
+Figure01C, Prometaphase3.lif [Series001],Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,Prometaphase3,prometaphase,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
 Figure01C,Prometaphase4.lif,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,Prometaphase4,prometaphase,Reichman-2018/Figure01C,raw,crest; pericentrin; tubulin; DNA
 Figure01D,PM1.tif,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,PM1,prometaphase,Reichman-2018/Figure01D,raw,tubulin; crest; DNA; pericentrin
 Figure01D,PM10.tif,Mus musculus,NCBITaxon,10090,Zygote,UBERON,0000106,PM10,prometaphase,Reichman-2018/Figure01D,raw,tubulin; crest; DNA; pericentrin
