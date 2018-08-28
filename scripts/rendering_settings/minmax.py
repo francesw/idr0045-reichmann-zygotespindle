@@ -27,7 +27,7 @@ https://github.com/ome/scripts/pull/103
 
 from omero.gateway import BlitzGateway
 from omero.model import StatsInfoI
-from omero.rtypes import rdouble, rlong, rstring
+from omero.rtypes import rdouble, rstring
 from omero.util.text import TableBuilder
 from omero.util.tiles import TileLoop, TileLoopIteration
 
@@ -146,7 +146,7 @@ def processImages(conn, scriptParams):
     tb = TableBuilder("Context", "Channel", "Min", "Max")
     statsInfos = dict()
     for iId in imageIds:
-        print "image id %s " %iId
+        print "image id %s " % iId
         statsInfo = calcStatsInfo(conn, iId, choice, debug)
         statsInfos[iId] = statsInfo
         for c, si in sorted(statsInfo.items()):
@@ -203,6 +203,7 @@ def processImages(conn, scriptParams):
     message += "%s stats info object(s) processed" % count
     return message
 
+
 def runAsScript():
     client = scripts.client()
 
@@ -229,4 +230,3 @@ def runAsScript():
 
 if __name__ == "__main__":
     runAsScript()
-
