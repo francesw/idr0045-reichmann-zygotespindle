@@ -2,6 +2,8 @@
 
 omero="/opt/omero/server/OMERO.server/bin/omero"
 
+cd ../../experimentA/rendering_settings
+
 for f in `find *.json`
 do
 	ds=${f%.*}
