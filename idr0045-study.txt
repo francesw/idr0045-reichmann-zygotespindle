@@ -33,7 +33,6 @@ Experiment Number	1
 Comment[IDR Experiment Name]	idr0045-reichmann/experimentA			
 Experiment Description	Characterization of mitotic spindle formation in live mouse zygotes by light-sheet microscopy.			
 Experiment Size				
-Experiment Example Images	Embryo3; MicrotubuleBallStage4, Prometaphase1, Prometaphase3, Metaphase4; PM10, PM15; Embryo05; Zygote/Cell03, 2Cell/2-Cell-10-1, 4Cell/4-Cell-11-1 and 8Cell/8-Cell-14-1; Untreated/Zygote/08, Untreated/2-Cell/20, Untreated/8-Cell/02, NocMo/2-Cell/37, NocMo/8-Cell/12, MoNoc/2-Cell/22 and MoNoc/8-Cell/12; Untreated/Zygote/04, Untreated/2-Cell/18, Untreated/8-Cell/01, NocMo/2-Cell/05, NocMo/8-Cell/11, MoNoc/2-Cel/12 and MoNoc/8-Cell/11			
 Experiment Imaging Method	light sheet microscopy	confocal microscopy		
 Experiment Imaging Method Term Source REF	Fbbi	Fbbi		
 Experiment Imaging Method Term Accession	Fbbi:00000369	Fbbi:00000251		
