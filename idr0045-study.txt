@@ -15,18 +15,18 @@ Study Author List	Judith Reichmann, Bianca Nijmeijer, M. Julius Hossain, Manuel 
 Study DOI	https://doi.org/10.1126/science.aar7462			
 Study Copyright	Reichmann et al			
 				
-# Study Contacts	Ellenberg			
-Study Person Last Name	Jan			
-Study Person First Name	jan.ellenberg@embl.de			
-Study Person Email	EMBL Heidelberg, Meyerhofstrasse 1, 69117 Heidelberg, Germany EMBL Heidelberg, Meyerhofstrasse 1, 69117 Heidelberg, Germany			
-Study Person Address	principal investigator	submitter		
-Study Person Roles				
+# Study Contacts				
+Study Person Last Name	Ellenberg			
+Study Person First Name	Jan			
+Study Person Email	jan.ellenberg@embl.de			
+Study Person Address	EMBL Heidelberg, Meyerhofstrasse 1, 69117 Heidelberg, Germany EMBL Heidelberg, Meyerhofstrasse 1, 69117 Heidelberg, Germany			
+Study Person Roles	principal investigator	submitter		
 				
-# Study License and Data DOI	CC-BY 4.0			
-Study License	https://creativecommons.org/licenses/by/4.0/			
-Study License URL	University of Dundee			
-Study Data Publisher	https://doi.org/10.17867/10000115			
-Study Data DOI				
+# Study License and Data DOI				
+Study License	CC-BY 4.0			
+Study License URL	https://creativecommons.org/licenses/by/4.0/			
+Study Data Publisher	University of Dundee			
+Study Data DOI	https://doi.org/10.17867/10000115			
 				
 # EXPERIMENT SECTION				
 Experiment Number	1			
