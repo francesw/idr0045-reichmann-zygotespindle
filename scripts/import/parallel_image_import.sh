@@ -28,7 +28,7 @@ $omero login
 expDir=`dirname $bulkFile`
 
 # Determine project directory and name
-projectName=idr0045-reichmann/experimentA 
+projectName=idr0045-reichmann-zygotespindle/experimentA
 
 # Determine path to filePaths.tsv
 filePaths=$expDir/`grep "path:" $bulkFile | cut -d " " -f2 | tr -d "\""`
