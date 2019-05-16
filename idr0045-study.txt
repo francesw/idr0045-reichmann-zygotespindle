@@ -1,12 +1,14 @@
 # STUDY DESCRIPTION SECTION				
 Comment[IDR Study Accession]	idr0045			
-Study Title	Dual spindle formation in zygotes keeps parental genomes apart in early mammalian embryos			
+Study Title	Dual spindle formation in zygotes keeps parental genomes apart in early mammalian embryos
+Study Type	spindle assembly
+Study Type Term Source REF	GO	
+Study Type Term Accession	GO:0051225
 Study Description	At the beginning of mammalian life the genetic material from each parent meets when the fertilized egg divides. It was previously thought that a single microtubule spindle is responsible to spatially combine the two genomes and then segregate them to create the two-cell embryo. Utilizing light-sheet microscopy, we showed that two bipolar spindles form in the zygote, which independently congress the maternal and paternal genomes. These two spindles aligned their poles prior to anaphase but kept the parental genomes apart during the first cleavage. This spindle assembly mechanism provides a potential rationale for erroneous divisions into more than two blastomeric nuclei observed in mammalian zygotes and reveals the mechanism behind the observation that parental genomes occupy separate nuclear compartments in the two-cell embryo.			
 Study Organism	Mus musculus	Mus musculus x Mus spretus		
 Study Organism Term Source REF	NCBITaxon			
 Study Organism Term Accession	10090	186842		
 Study Experiments Number	1			
-Study Type	5D light sheet and confocal microscopy imaging of mouse zygotes			
 				
 # Study Publication				
 Study PubMed ID	30002254			
@@ -26,14 +28,18 @@ Study License	CC-BY 4.0
 Study License URL	https://creativecommons.org/licenses/by/4.0/			
 Study Copyright	Reichmann et al			
 Study Data Publisher	University of Dundee			
-Study Data DOI	https://doi.org/10.17867/10000115			
+Study Data DOI	https://doi.org/10.17867/10000115		
+
+Term Source Name	NCBITaxon	EFO	CMPO	FBbi	GO
+Term Source URI	http://purl.obolibrary.org/obo/	http://www.ebi.ac.uk/efo/	http://www.ebi.ac.uk/cmpo/	http://purl.obolibrary.org/obo/	http://purl.obolibrary.org/obo/
 				
 # EXPERIMENT SECTION				
 Experiment Number	1			
-Comment[IDR Experiment Name]	idr0045-reichmann-zygotespindle/experimentA			
+Comment[IDR Experiment Name]	idr0045-reichmann-zygotespindle/experimentA	
+Experiment Sample Type	tissue
 Experiment Description	Characterization of mitotic spindle formation in live mouse zygotes by light-sheet microscopy.			
 Experiment Size				
-Experiment Imaging Method	light sheet microscopy	confocal microscopy		
+Experiment Imaging Method	light sheet fluorescence microscopy	confocal microscopy		
 Experiment Imaging Method Term Source REF	Fbbi	Fbbi		
 Experiment Imaging Method Term Accession	Fbbi:00000369	Fbbi:00000251		
 Experiment Comments	"Figure01A - Zygotes were isolated from C57BL/6J x C3H/He F1 females mated with C57BL/6J x C3H/He F1 males. Embryos were injected with mRNA for expression of EB3-mCherry and tdEos-Cep192. Embryos were imaged with 45 sec time resolution on an inverted light sheet microscope (doi: 10.1038/nmeth.3690) at 130nm xy and 520nm z resolution using 488 and 561 laser lines. Average Image Dimension (XYZCT): 1000x1000x101x2x[120-181] Total Gb: 259
