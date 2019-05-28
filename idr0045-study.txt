@@ -8,7 +8,9 @@ Study Description	At the beginning of mammalian life the genetic material from e
 Study Organism	Mus musculus	Mus musculus x Mus spretus		
 Study Organism Term Source REF	NCBITaxon			
 Study Organism Term Accession	10090	186842		
-Study Experiments Number	1			
+Study Experiments Number	1	
+Study External URL
+Study Public Release Date	2018-08-29
 				
 # Study Publication				
 Study PubMed ID	30002254			
